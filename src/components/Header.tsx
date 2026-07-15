@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 //import { Menu, X, Feather } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/aom.png";
 
 const NAV = [
   { label: "Início", href: "#inicio" },
