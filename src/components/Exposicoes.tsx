@@ -34,14 +34,7 @@ export default function Exposicoes() {
 
   return (
     <section id="exposicoes" className="relative overflow-hidden py-24 md:py-32 text-white">
-      <img
-        src={expoImg}
-        alt="Exposição ornitológica"
-        width={1280}
-        height={960}
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
+   
       <div className="absolute inset-0 bg-[oklch(0.22_0.04_160/0.82)]" />
       <div className="relative container-page">
         <div className="max-w-2xl">
