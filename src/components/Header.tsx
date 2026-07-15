@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-//import { Menu, X, Feather } from "lucide-react";
+import { Menu, X} from "lucide-react";
 import logo from "@/assets/aom.png";
 
 const NAV = [
