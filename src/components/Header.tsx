@@ -33,8 +33,8 @@ export default function Header() {
             <Feather className="h-5 w-5" />
           </span>
           <span className="flex flex-col leading-tight min-w-0">
-            <span className="font-display text-base font-bold text-foreground truncate">A. O. Montemorense</span>
-            <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">desde 1998</span>
+            <span className="font-display text-base font-bold text-foreground truncate">Associação Ornitológica Montemorense</span>
+            <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">desde 2005</span>
           </span>
         </a>
 
