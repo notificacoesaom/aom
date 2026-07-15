@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import expoImg from "@/assets/exposicao.jpg";
+//import expoImg from "@/assets/exposicao.jpg";
 import { CalendarDays, MapPin } from "lucide-react";
 
 const TARGET = new Date("2026-10-15T09:00:00").getTime();
