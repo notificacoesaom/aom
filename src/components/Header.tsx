@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Feather } from "lucide-react";
+//import { Menu, X, Feather } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const NAV = [
   { label: "Início", href: "#inicio" },
@@ -29,9 +30,7 @@ export default function Header() {
     >
       <div className="container-page flex h-16 items-center justify-between md:h-20">
         <a href="#inicio" className="flex items-center gap-2.5 min-w-0">
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground">
-            <Feather className="h-5 w-5" />
-          </span>
+          <img src={logo} alt="Logo A.O. Montemorense" className="h-10 w-10 shrink-0 object-contain" />
           <span className="flex flex-col leading-tight min-w-0">
             <span className="font-display text-base font-bold text-foreground truncate">Associação Ornitológica Montemorense</span>
             <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">desde 2005</span>
