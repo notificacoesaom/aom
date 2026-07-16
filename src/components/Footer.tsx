@@ -10,8 +10,8 @@ export default function Footer() {
               <Feather className="h-5 w-5" />
             </span>
             <div className="leading-tight">
-              <div className="font-display font-bold">A. O. Montemorense</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] opacity-70">desde 1998</div>
+              <div className="font-display font-bold">ssociação Ornitológica Montemorense</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] opacity-70">desde 2005</div>
             </div>
           </div>
           <p className="mt-5 text-sm leading-relaxed opacity-80">
@@ -32,11 +32,13 @@ export default function Footer() {
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 opacity-80" />
-              <span>+351 266 000 000</span>
+              <span>+351 266877513 "Chamada para rede fixa nacional"</span>
+              <Phone className="mt-0.5 h-4 w-4 shrink-0 opacity-80" />
+              <span>+351 +351 917219280 "chamada para rede móvel nacional"</span>
             </li>
             <li className="flex items-start gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 opacity-80" />
-              <a href="mailto:geral@aomontemor.pt" className="hover:underline">geral@aomontemor.pt</a>
+              <a href="mailto:geral@aomontemor.pt" className="hover:underline">aom.direcao@gmail.com</a>
             </li>
           </ul>
         </div>
@@ -46,7 +48,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 opacity-80" />
-              <span>Rua da Ornitologia, 12<br />7050-000 Montemor-o-Novo</span>
+              <span>Rua de Santo António 26<br />7050-202 Montemor-o-Novo</span>
             </li>
             <li className="flex items-start gap-3">
               <Clock className="mt-0.5 h-4 w-4 shrink-0 opacity-80" />
@@ -58,7 +60,7 @@ export default function Footer() {
         <div id="inscricao">
           <h4 className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">Inscrição & Quotas</h4>
           <p className="mt-4 text-sm opacity-80">
-            Quota anual: <span className="font-semibold text-primary-foreground">25€</span>
+            Quota anual: <span className="font-semibold text-primary-foreground">22€</span>
           </p>
           <div className="mt-4 rounded-xl bg-primary-foreground/10 p-4 text-sm">
             <div className="text-[10px] uppercase tracking-[0.18em] opacity-70">IBAN</div>
@@ -76,7 +78,7 @@ export default function Footer() {
       <div className="border-t border-primary-foreground/10">
         <div className="container-page flex flex-col gap-2 py-6 text-xs opacity-70 sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} Associação Ornitológica Montemorense. Todos os direitos reservados.</span>
-          <span>NIPC 500 000 000</span>
+          <span>NIPC 507 500 474</span>
         </div>
       </div>
     </footer>
