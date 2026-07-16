@@ -7,15 +7,15 @@ export default function Footer() {
       {/* Esta é a tua secção de colunas (Grid) */}
       <div className="container-page grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         
-        {/* Coluna 1 */}
-      <div>
+       {/* Coluna 1: Logo/Desc */}
+        <div>
           <div className="flex items-center gap-4">
-            {/* Círculo aumentado para h-14 w-14 e padding adicionado */}
-            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-primary-foreground/10 p-2">
+            {/* Aumentámos para h-20 w-20 e ajustámos o padding para 3 */}
+            <span className="grid h-20 w-20 shrink-0 place-items-center rounded-full bg-primary-foreground/10 p-3">
               <img src={logo} alt="Logo A.O. Montemorense" className="h-full w-full object-contain" />
             </span>
             <div className="leading-tight">
-              <div className="font-display font-bold">Associação Ornitológica Montemorense</div>
+              <div className="font-display font-bold text-lg">Associação Ornitológica Montemorense</div>
               <div className="text-[10px] uppercase tracking-[0.18em] opacity-70">desde 2005</div>
             </div>
           </div>
