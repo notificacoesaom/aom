@@ -8,7 +8,7 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-2.5">
             <span className="grid h-10 w-10 place-items-center rounded-full bg-primary-foreground/10">
-              <img src={logo} alt="Logo A.O. Montemorense" className="h-30 w-30 shrink-0 object-contain" />
+              <img src={logo} alt="Logo A.O. Montemorense" className="h-20 w-20 shrink-0 object-contain" />
             </span>
             <div className="leading-tight">
               <div className="font-display font-bold">Associação Ornitológica Montemorense</div>
@@ -73,22 +73,28 @@ export default function Footer() {
         </div>
 
         <div id="inscricao">
-          <h4 className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">Inscrição & Quotas</h4>
-          <p className="mt-4 text-sm opacity-80">
-            Quota anual: <span className="font-semibold text-primary-foreground">12€</span>
-          </p>
-          <div className="mt-4 rounded-xl bg-primary-foreground/10 p-4 text-sm">
-            <div className="text-[10px] uppercase tracking-[0.18em] opacity-70">IBAN</div>
-            <div className="mt-1 font-mono text-xs tracking-wider">PT50 0045 6390 4020 2141 2033 8</div>
-          </div>
-          <a
-            href="mailto:aom.direcao@gmail.com?subject=Inscri%C3%A7%C3%A3o%20de%20S%C3%B3cio"
-            className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-primary-foreground px-5 py-3 text-sm font-semibold text-primary hover:bg-primary-foreground/90 transition"
-          >
-            Pedir Inscrição
-          </a>
-        </div>
-      </div>
+  <h4 className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">
+    Inscrição & Quotas
+  </h4>
+  <p className="mt-4 text-sm opacity-80">
+    Quota anual: <span className="font-semibold text-primary-foreground">12€</span>
+  </p>
+  
+  <div className="mt-4 rounded-xl bg-primary-foreground/10 p-4 text-sm">
+    <div className="text-[10px] uppercase tracking-[0.18em] opacity-70">IBAN</div>
+    {/* Adicionámos "break-all" para garantir que o número nunca "foge" da caixa */}
+    <div className="mt-1 font-mono text-xs tracking-wider break-all">
+      PT50 0045 6390 4020 2141 2033 8
+    </div>
+  </div>
+
+  <a
+    href="mailto:aom.direcao@gmail.com?subject=Inscrição%20de%20Sócio&body=Gostaria%20de%20solicitar%20a%20minha%20inscrição%20como%20sócio.%0A%0ANome:%0AMorada:%0ANIF:%0AContacto%20Telefónico:"
+    className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-primary-foreground px-5 py-3 text-sm font-semibold text-primary hover:bg-primary-foreground/90 transition"
+  >
+    Pedir Inscrição
+  </a>
+</div>
 
       <div className="border-t border-primary-foreground/10">
         <div className="container-page flex flex-col gap-2 py-6 text-xs opacity-70 sm:flex-row sm:items-center sm:justify-between">
