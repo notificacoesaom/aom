@@ -1,10 +1,13 @@
-import { Feather, Mail, Phone, Smartphone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
+import { Mail, Phone, Smartphone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 import logo from "@/assets/aom.png";
 
 export default function Footer() {
   return (
     <footer id="contactos" className="bg-primary text-primary-foreground">
+      {/* Esta é a tua secção de colunas (Grid) */}
       <div className="container-page grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+        
+        {/* Coluna 1 */}
         <div>
           <div className="flex items-center gap-2.5">
             <span className="grid h-10 w-10 place-items-center rounded-full bg-primary-foreground/10">
@@ -32,32 +35,29 @@ export default function Footer() {
           </div>
         </div>
 
-       <div className="flex flex-col gap-4">
-  <h3 className="font-bold text-lg">CONTACTOS</h3>
-  <div className="flex flex-col gap-3 text-sm">
-    {/* Telefone Fixo */}
-    <div className="flex flex-col">
-      <a href="tel:+351266877513" className="hover:text-primary transition-colors flex items-center gap-2">
-        <Phone className="h-4 w-4" /> +351 266 877 513
-      </a>
-      <span className="text-[10px] text-primary-foreground/60 ml-6">(Chamada para rede fixa nacional)</span>
-    </div>
+        {/* Coluna 2 */}
+        <div className="flex flex-col gap-4">
+          <h3 className="font-bold text-lg">CONTACTOS</h3>
+          <div className="flex flex-col gap-3 text-sm">
+            <div className="flex flex-col">
+              <a href="tel:+351266877513" className="hover:text-primary-foreground/70 transition flex items-center gap-2">
+                <Phone className="h-4 w-4" /> +351 266 877 513
+              </a>
+              <span className="text-[10px] opacity-60 ml-6">(Chamada para rede fixa nacional)</span>
+            </div>
+            <div className="flex flex-col">
+              <a href="tel:+351917219280" className="hover:text-primary-foreground/70 transition flex items-center gap-2">
+                <Smartphone className="h-4 w-4" /> +351 917 219 280
+              </a>
+              <span className="text-[10px] opacity-60 ml-6">(Chamada para rede móvel nacional)</span>
+            </div>
+            <a href="mailto:aom.direcao@gmail.com" className="hover:text-primary-foreground/70 transition flex items-center gap-2">
+              <Mail className="h-4 w-4" /> aom.direcao@gmail.com
+            </a>
+          </div>
+        </div>
 
-    {/* Telefone Móvel */}
-    <div className="flex flex-col">
-      <a href="tel:+351917219280" className="hover:text-primary transition-colors flex items-center gap-2">
-        <Smartphone className="h-4 w-4" /> +351 917 219 280
-      </a>
-      <span className="text-[10px] text-primary-foreground/60 ml-6">(Chamada para rede móvel nacional)</span>
-    </div>
-
-    {/* Email */}
-    <a href="mailto:aom.direcao@gmail.com" className="hover:text-primary transition-colors flex items-center gap-2">
-      <Mail className="h-4 w-4" /> aom.direcao@gmail.com
-    </a>
-  </div>
-</div>
-
+        {/* Coluna 3 */}
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">Sede</h4>
           <ul className="mt-4 space-y-3 text-sm">
@@ -72,30 +72,29 @@ export default function Footer() {
           </ul>
         </div>
 
+        {/* Coluna 4 */}
         <div id="inscricao">
-  <h4 className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">
-    Inscrição & Quotas
-  </h4>
-  <p className="mt-4 text-sm opacity-80">
-    Quota anual: <span className="font-semibold text-primary-foreground">12€</span>
-  </p>
-  
-  <div className="mt-4 rounded-xl bg-primary-foreground/10 p-4 text-sm">
-    <div className="text-[10px] uppercase tracking-[0.18em] opacity-70">IBAN</div>
-    {/* Adicionámos "break-all" para garantir que o número nunca "foge" da caixa */}
-    <div className="mt-1 font-mono text-xs tracking-wider break-all">
-      PT50 0045 6390 4020 2141 2033 8
-    </div>
-  </div>
+          <h4 className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">
+            Inscrição & Quotas
+          </h4>
+          <p className="mt-4 text-sm opacity-80">
+            Quota anual: <span className="font-semibold text-primary-foreground">12€</span>
+          </p>
+          <div className="mt-4 rounded-xl bg-primary-foreground/10 p-4 text-sm">
+            <div className="text-[10px] uppercase tracking-[0.18em] opacity-70">IBAN</div>
+            <div className="mt-1 font-mono text-xs tracking-wider break-all">PT50 0045 6390 4020 2141 2033 8</div>
+          </div>
+          <a
+            href="mailto:aom.direcao@gmail.com?subject=Inscrição%20de%20Sócio&body=Gostaria%20de%20solicitar%20a%20minha%20inscrição%20como%20sócio.%0A%0ANome:%0AMorada:%0ANIF:%0AContacto%20Telefónico:"
+            className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-primary-foreground px-5 py-3 text-sm font-semibold text-primary hover:bg-primary-foreground/90 transition"
+          >
+            Pedir Inscrição
+          </a>
+        </div>
+        
+      </div> {/* <--- FECHAMENTO DA GRID (Faltava este!) */}
 
-  <a
-    href="mailto:aom.direcao@gmail.com?subject=Inscrição%20de%20Sócio&body=Gostaria%20de%20solicitar%20a%20minha%20inscrição%20como%20sócio.%0A%0ANome:%0AMorada:%0ANIF:%0AContacto%20Telefónico:"
-    className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-primary-foreground px-5 py-3 text-sm font-semibold text-primary hover:bg-primary-foreground/90 transition"
-  >
-    Pedir Inscrição
-  </a>
-</div>
-
+      {/* Secção de Copyright */}
       <div className="border-t border-primary-foreground/10">
         <div className="container-page flex flex-col gap-2 py-6 text-xs opacity-70 sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} Associação Ornitológica Montemorense. Todos os direitos reservados.</span>
