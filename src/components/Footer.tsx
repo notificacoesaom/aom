@@ -1,4 +1,4 @@
-import { Feather, Mail, Phone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
+import { Feather, Mail, Phone, Smartphone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
