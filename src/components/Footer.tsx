@@ -1,4 +1,5 @@
 import { Feather, Mail, Phone, Smartphone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
+import logo from "@/assets/aom.png";
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-2.5">
             <span className="grid h-10 w-10 place-items-center rounded-full bg-primary-foreground/10">
-              <Feather className="h-5 w-5" />
+              <img src={logo} alt="Logo A.O. Montemorense" className="h-10 w-10 shrink-0 object-contain" />
             </span>
             <div className="leading-tight">
               <div className="font-display font-bold">Associação Ornitológica Montemorense</div>
