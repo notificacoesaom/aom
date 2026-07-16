@@ -8,10 +8,11 @@ export default function Footer() {
       <div className="container-page grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         
         {/* Coluna 1 */}
-        <div>
-          <div className="flex items-center gap-2.5">
-            <span className="grid h-10 w-10 place-items-center rounded-full bg-primary-foreground/10">
-              <img src={logo} alt="Logo A.O. Montemorense" className="h-20 w-20 shrink-0 object-contain" />
+      <div>
+          <div className="flex items-center gap-4">
+            {/* Círculo aumentado para h-14 w-14 e padding adicionado */}
+            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-primary-foreground/10 p-2">
+              <img src={logo} alt="Logo A.O. Montemorense" className="h-full w-full object-contain" />
             </span>
             <div className="leading-tight">
               <div className="font-display font-bold">Associação Ornitológica Montemorense</div>
@@ -72,7 +73,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Coluna 4 */}
+        {/* Coluna 4: Inscrição */}
         <div id="inscricao">
           <h4 className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">
             Inscrição & Quotas
@@ -80,10 +81,14 @@ export default function Footer() {
           <p className="mt-4 text-sm opacity-80">
             Quota anual: <span className="font-semibold text-primary-foreground">12€</span>
           </p>
-          <div className="mt-4 rounded-xl bg-primary-foreground/10 p-4 text-sm">
-            <div className="text-[10px] uppercase tracking-[0.18em] opacity-70">IBAN</div>
-            <div className="mt-1 font-mono text-xs tracking-wider break-all">PT50 0045 6390 4020 2141 2033 8</div>
+          
+          <div className="mt-4 rounded-xl bg-primary-foreground/10 p-4 text-sm border border-primary-foreground/10">
+            <div className="text-[10px] uppercase tracking-[0.18em] opacity-70 mb-1">IBAN</div>
+            <div className="font-mono text-xs tracking-wide break-words text-primary-foreground/90">
+              PT50 0045 6390 4020 2141 2033 8
+            </div>
           </div>
+
           <a
             href="mailto:aom.direcao@gmail.com?subject=Inscrição%20de%20Sócio&body=Gostaria%20de%20solicitar%20a%20minha%20inscrição%20como%20sócio.%0A%0ANome:%0AMorada:%0ANIF:%0AContacto%20Telefónico:"
             className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-primary-foreground px-5 py-3 text-sm font-semibold text-primary hover:bg-primary-foreground/90 transition"
