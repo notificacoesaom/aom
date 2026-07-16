@@ -8,7 +8,7 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-2.5">
             <span className="grid h-10 w-10 place-items-center rounded-full bg-primary-foreground/10">
-              <img src={logo} alt="Logo A.O. Montemorense" className="h-10 w-10 shrink-0 object-contain" />
+              <img src={logo} alt="Logo A.O. Montemorense" className="h-30 w-30 shrink-0 object-contain" />
             </span>
             <div className="leading-tight">
               <div className="font-display font-bold">Associação Ornitológica Montemorense</div>
@@ -67,7 +67,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-3">
               <Clock className="mt-0.5 h-4 w-4 shrink-0 opacity-80" />
-              <span>Sáb · 15h – 18h<br />Dom · 10h – 12h</span>
+              <span>Segunda a Sexta, das 13h30 às 15h30</span>
             </li>
           </ul>
         </div>
@@ -79,10 +79,10 @@ export default function Footer() {
           </p>
           <div className="mt-4 rounded-xl bg-primary-foreground/10 p-4 text-sm">
             <div className="text-[10px] uppercase tracking-[0.18em] opacity-70">IBAN</div>
-            <div className="mt-1 font-mono text-xs tracking-wider">PT50 0000 0000 0000 0000 0000 0</div>
+            <div className="mt-1 font-mono text-xs tracking-wider">PT50 0045 6390 4020 2141 2033 8</div>
           </div>
           <a
-            href="mailto:geral@aomontemor.pt?subject=Inscri%C3%A7%C3%A3o%20de%20S%C3%B3cio"
+            href="mailto:aom.direcao@gmail.com?subject=Inscri%C3%A7%C3%A3o%20de%20S%C3%B3cio"
             className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-primary-foreground px-5 py-3 text-sm font-semibold text-primary hover:bg-primary-foreground/90 transition"
           >
             Pedir Inscrição
