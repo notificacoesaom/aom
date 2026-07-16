@@ -10,7 +10,7 @@ export default function Footer() {
               <Feather className="h-5 w-5" />
             </span>
             <div className="leading-tight">
-              <div className="font-display font-bold">ssociação Ornitológica Montemorense</div>
+              <div className="font-display font-bold">Associação Ornitológica Montemorense</div>
               <div className="text-[10px] uppercase tracking-[0.18em] opacity-70">desde 2005</div>
             </div>
           </div>
@@ -18,7 +18,11 @@ export default function Footer() {
             Ornitologia com tradição, ciência e comunidade no coração do Alentejo.
           </p>
           <div className="mt-6 flex gap-3">
-            <a href="#" aria-label="Facebook" className="grid h-10 w-10 place-items-center rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition">
+            <a 
+              href="https://www.facebook.com/profile.php?id=100057546965240" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="grid h-10 w-10 place-items-center rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition">
               <Facebook className="h-4 w-4" />
             </a>
             <a href="#" aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition">
@@ -34,7 +38,7 @@ export default function Footer() {
               <Phone className="mt-0.5 h-4 w-4 shrink-0 opacity-80" />
               <span>+351 266877513 "Chamada para rede fixa nacional"</span>
               <Phone className="mt-0.5 h-4 w-4 shrink-0 opacity-80" />
-              <span>+351 +351 917219280 "chamada para rede móvel nacional"</span>
+              <span>+351 +351 917219280 "Chamada para rede móvel nacional"</span>
             </li>
             <li className="flex items-start gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 opacity-80" />
@@ -60,7 +64,7 @@ export default function Footer() {
         <div id="inscricao">
           <h4 className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">Inscrição & Quotas</h4>
           <p className="mt-4 text-sm opacity-80">
-            Quota anual: <span className="font-semibold text-primary-foreground">22€</span>
+            Quota anual: <span className="font-semibold text-primary-foreground">12€</span>
           </p>
           <div className="mt-4 rounded-xl bg-primary-foreground/10 p-4 text-sm">
             <div className="text-[10px] uppercase tracking-[0.18em] opacity-70">IBAN</div>
