@@ -31,21 +31,31 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>
-          <h4 className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">Contactos</h4>
-          <ul className="mt-4 space-y-3 text-sm">
-            <li className="flex items-start gap-3">
-              <Phone className="mt-0.5 h-4 w-4 shrink-0 opacity-80" />
-              <span>+351 266877513 "Chamada para rede fixa nacional"</span>
-              <Phone className="mt-0.5 h-4 w-4 shrink-0 opacity-80" />
-              <span>+351 +351 917219280 "Chamada para rede móvel nacional"</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Mail className="mt-0.5 h-4 w-4 shrink-0 opacity-80" />
-              <a href="mailto:geral@aomontemor.pt" className="hover:underline">aom.direcao@gmail.com</a>
-            </li>
-          </ul>
-        </div>
+       <div className="flex flex-col gap-4">
+  <h3 className="font-bold text-lg">CONTACTOS</h3>
+  <div className="flex flex-col gap-3 text-sm">
+    {/* Telefone Fixo */}
+    <div className="flex flex-col">
+      <a href="tel:+351266877513" className="hover:text-primary transition-colors flex items-center gap-2">
+        <Phone className="h-4 w-4" /> +351 266 877 513
+      </a>
+      <span className="text-[10px] text-primary-foreground/60 ml-6">(Chamada para rede fixa nacional)</span>
+    </div>
+
+    {/* Telefone Móvel */}
+    <div className="flex flex-col">
+      <a href="tel:+351917219280" className="hover:text-primary transition-colors flex items-center gap-2">
+        <Smartphone className="h-4 w-4" /> +351 917 219 280
+      </a>
+      <span className="text-[10px] text-primary-foreground/60 ml-6">(Chamada para rede móvel nacional)</span>
+    </div>
+
+    {/* Email */}
+    <a href="mailto:aom.direcao@gmail.com" className="hover:text-primary transition-colors flex items-center gap-2">
+      <Mail className="h-4 w-4" /> aom.direcao@gmail.com
+    </a>
+  </div>
+</div>
 
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">Sede</h4>
