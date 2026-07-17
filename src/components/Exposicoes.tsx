@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { CalendarDays, MapPin, Clock } from "lucide-react";
 
 // Importa as tuas imagens aqui (garante que os nomes dos ficheiros estão corretos na pasta src/assets)
-import cartazImg from "@/assets/cartaz.jpg"; 
+import cartazImg from "@/assets/cartaz.jpeg"; 
 import logoImg from "@/assets/logo-exposicao.png";
 
 const TARGET = new Date("2026-11-21T09:00:00").getTime();
