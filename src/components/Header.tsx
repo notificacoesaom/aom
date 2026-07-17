@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import { Menu, X} from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/aom.png";
 
+// Estrutura preparada para o futuro: Agrupámos por áreas de interesse
 const NAV = [
   { label: "Início", href: "#inicio" },
-  { label: "Sobre Nós", href: "#sobre" },
-  { label: "Vantagens", href: "#vantagens" },
-  { label: "Anilhas", href: "#anilhas" },
-  { label: "Exposições", href: "#exposicoes" },
+  { label: "A Associação", href: "#associacao" },
+  { label: "Atividades", href: "#atividades" },
+  { label: "Exposições", href: "#exposicoes" }, // Aqui tens as exposições de volta!
+  { label: "Criação", href: "#criacao" },
+  { label: "Biblioteca", href: "#biblioteca" },
   { label: "Contactos", href: "#contactos" },
 ];
 
@@ -37,7 +39,8 @@ export default function Header() {
           </span>
         </a>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        {/* Navegação principal */}
+        <nav className="hidden lg:flex items-center gap-6">
           {NAV.map((n) => (
             <a
               key={n.href}
@@ -54,7 +57,7 @@ export default function Header() {
             href="#inscricao"
             className="hidden sm:inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] hover:bg-primary-glow transition-colors"
           >
-            Inscrição de Sócios
+            Inscrição
           </a>
           <button
             aria-label="Abrir menu"
@@ -66,6 +69,7 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Menu Mobile */}
       {open && (
         <div className="lg:hidden border-t border-border bg-background">
           <nav className="container-page flex flex-col py-4">
