@@ -44,10 +44,10 @@ export default function Associacao() {
       <ul className="space-y-2 text-sm text-muted-foreground">
         <li><strong className="text-foreground">Liberata Borralho</strong> – Presidente</li>
         <li><strong className="text-foreground">Nelson Coelho</strong> – Vice-presidente</li>
-        <li><strong className="text-foreground">Virginío Luz</strong> – Tesoureiro</li>
-        <li><strong className="text-foreground">Carla da Luz</strong> – Secretário</li>
-        <li><strong className="text-foreground">Joaquim Reis</strong> – 1º Suplente</li>
-        <li><strong className="text-foreground">Manuel Pereira</strong> – 2º Suplente</li>
+        <li><strong className="text-foreground">Joaquim Reis</strong> – Tesoureiro</li>
+        <li><strong className="text-foreground">Manuel Pereira</strong> – Secretário</li>
+        <li><strong className="text-foreground">Daniel Teixeira</strong> – 1º Suplente</li>
+        <li><strong className="text-foreground">Ricardo Gonçalves</strong> – 2º Suplente</li>
       </ul>
     </div>
 
