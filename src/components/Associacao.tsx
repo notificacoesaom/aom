@@ -1,69 +1,58 @@
-import sobreImg from "@/assets/sobre-aviario.jpg";
-import { FileText, Download } from "lucide-react";
+import { History, Target, Users, Mail } from "lucide-react";
 
-export default function Sobre() {
+export default function Associacao() {
   return (
-    <section id="associacao" className="py-24 md:py-32">
-      <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
-        {/* Imagem */}
-        <div className="relative">
-          <img
-            src={sobreImg}
-            alt="Aviário com aves exóticas"
-            width={1280}
-            height={960}
-            loading="lazy"
-            className="w-full rounded-2xl object-cover shadow-[var(--shadow-card)]"
-          />
-          <div className="absolute -bottom-6 -right-4 hidden sm:block rounded-2xl bg-primary px-6 py-5 text-primary-foreground shadow-[var(--shadow-soft)]">
-            <div className="font-display text-3xl font-bold leading-none">+250</div>
-            <div className="mt-1 text-xs uppercase tracking-widest opacity-80">sócios ativos</div>
-          </div>
-        </div>
-
-        {/* Conteúdo */}
-        <div>
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">A Associação</span>
-          <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
-            Uma tradição ornitológica no coração do Alentejo.
-          </h2>
-          <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            A Associação Ornitológica Montemorense reúne criadores de todas as gerações em
-            torno de uma paixão comum: as aves. Promovemos o anilhamento oficial, a criação
-            ética, exposições anuais e formação técnica, contribuindo para a preservação de
-            espécies e para o desenvolvimento da ornitologia em Portugal.
+    <div id="associacao" className="py-24 bg-background">
+      <div className="container-page space-y-24">
+        
+        {/* 1. História e Quem Somos */}
+        <section>
+          <h2 className="text-3xl font-bold mb-6">A Nossa História</h2>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl">
+            Fundada em 2005, a Associação Ornitológica Montemorense nasceu da vontade de...
+            (Insere aqui o texto sobre a história da associação).
           </p>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Somos filiados na federação nacional, o que garante aos nossos sócios acesso a
-            anilhas oficiais, participação em concursos e o reconhecimento do seu trabalho.
-          </p>
+        </section>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#"
-              className="inline-flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-4 text-sm font-semibold text-foreground shadow-[var(--shadow-card)] hover:border-primary/40 transition"
-            >
-              <FileText className="h-5 w-5 text-primary" />
-              <span className="flex flex-col text-left">
-                <span>Estatutos</span>
-                <span className="text-xs font-normal text-muted-foreground">PDF · 240 KB</span>
-              </span>
-              <Download className="ml-auto h-4 w-4 text-muted-foreground" />
-            </a>
-            <a
-              href="#"
-              className="inline-flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-4 text-sm font-semibold text-foreground shadow-[var(--shadow-card)] hover:border-primary/40 transition"
-            >
-              <FileText className="h-5 w-5 text-primary" />
-              <span className="flex flex-col text-left">
-                <span>Regulamento Interno</span>
-                <span className="text-xs font-normal text-muted-foreground">PDF · 180 KB</span>
-              </span>
-              <Download className="ml-auto h-4 w-4 text-muted-foreground" />
-            </a>
+        {/* 2. Missão, Visão e Valores */}
+        <section className="grid md:grid-cols-3 gap-8">
+          <div className="p-6 rounded-2xl bg-card border border-border">
+            <Target className="h-8 w-8 text-primary mb-4" />
+            <h3 className="font-bold text-xl mb-2">Missão</h3>
+            <p className="text-sm text-muted-foreground">Promover a ornitologia ética...</p>
           </div>
-        </div>
+          <div className="p-6 rounded-2xl bg-card border border-border">
+            <Target className="h-8 w-8 text-primary mb-4" />
+            <h3 className="font-bold text-xl mb-2">Visão</h3>
+            <p className="text-sm text-muted-foreground">Ser uma referência nacional...</p>
+          </div>
+          <div className="p-6 rounded-2xl bg-card border border-border">
+            <Users className="h-8 w-8 text-primary mb-4" />
+            <h3 className="font-bold text-xl mb-2">Valores</h3>
+            <p className="text-sm text-muted-foreground">Ética, preservação e respeito...</p>
+          </div>
+        </section>
+
+        {/* 3. Órgãos Sociais */}
+        <section>
+          <h2 className="text-3xl font-bold mb-8">Órgãos Sociais</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="p-4 bg-muted rounded-xl">
+              <h4 className="font-bold">Direção</h4>
+              <p className="text-sm text-muted-foreground mt-2">Presidente: [Nome]</p>
+            </div>
+            <div className="p-4 bg-muted rounded-xl">
+              <h4 className="font-bold">Assembleia Geral</h4>
+              <p className="text-sm text-muted-foreground mt-2">Presidente: [Nome]</p>
+            </div>
+            <div className="p-4 bg-muted rounded-xl">
+              <h4 className="font-bold">Conselho Fiscal</h4>
+              <p className="text-sm text-muted-foreground mt-2">Presidente: [Nome]</p>
+            </div>
+          </div>
+        </section>
+
       </div>
-    </section>
+    </div>
   );
 }
