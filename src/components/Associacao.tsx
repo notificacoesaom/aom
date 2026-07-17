@@ -35,22 +35,45 @@ export default function Associacao() {
 
         {/* 3. Órgãos Sociais */}
         <section>
-          <h2 className="text-3xl font-bold mb-8">Órgãos Sociais</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-4 bg-muted rounded-xl">
-              <h4 className="font-bold">Direção</h4>
-              <p className="text-sm text-muted-foreground mt-2">Presidente: [Nome]</p>
-            </div>
-            <div className="p-4 bg-muted rounded-xl">
-              <h4 className="font-bold">Assembleia Geral</h4>
-              <p className="text-sm text-muted-foreground mt-2">Presidente: [Nome]</p>
-            </div>
-            <div className="p-4 bg-muted rounded-xl">
-              <h4 className="font-bold">Conselho Fiscal</h4>
-              <p className="text-sm text-muted-foreground mt-2">Presidente: [Nome]</p>
-            </div>
-          </div>
-        </section>
+  <h2 className="text-3xl font-bold mb-8 text-foreground">Órgãos Sociais</h2>
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+    {/* Direcção */}
+    <div className="p-6 bg-muted rounded-xl">
+      <h4 className="font-bold text-lg mb-4 border-b border-primary/20 pb-2">Direcção</h4>
+      <ul className="space-y-2 text-sm text-muted-foreground">
+        <li><strong className="text-foreground">Liberata Borralho</strong> – Presidente</li>
+        <li><strong className="text-foreground">Nelson Coelho</strong> – Vice-presidente</li>
+        <li><strong className="text-foreground">Virginío Luz</strong> – Tesoureiro</li>
+        <li><strong className="text-foreground">Carla da Luz</strong> – Secretário</li>
+        <li><strong className="text-foreground">Joaquim Reis</strong> – 1º Suplente</li>
+        <li><strong className="text-foreground">Manuel Pereira</strong> – 2º Suplente</li>
+      </ul>
+    </div>
+
+    {/* Assembleia Geral */}
+    <div className="p-6 bg-muted rounded-xl">
+      <h4 className="font-bold text-lg mb-4 border-b border-primary/20 pb-2">Assembleia Geral</h4>
+      <ul className="space-y-2 text-sm text-muted-foreground">
+        <li><strong className="text-foreground">Ricardo Pinto</strong> – Presidente</li>
+        <li><strong className="text-foreground">Pedro Pereira</strong> – Vice-presidente</li>
+        <li><strong className="text-foreground">Andreia Fernandes</strong> – Secretário</li>
+      </ul>
+    </div>
+
+    {/* Conselho Fiscal */}
+    <div className="p-6 bg-muted rounded-xl">
+      <h4 className="font-bold text-lg mb-4 border-b border-primary/20 pb-2">Conselho Fiscal</h4>
+      <ul className="space-y-2 text-sm text-muted-foreground">
+        <li><strong className="text-foreground">João Serrano</strong> – Presidente</li>
+        <li><strong className="text-foreground">José Alvito</strong> – Relator</li>
+        <li><strong className="text-foreground">Fernando Branca</strong> – Secretário</li>
+        <li><strong className="text-foreground">Luis Lérias</strong> – Suplente</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
 
       </div>
     </div>
