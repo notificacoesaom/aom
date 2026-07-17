@@ -5,6 +5,7 @@ export default function Sobre() {
   return (
     <section id="associacao" className="py-24 md:py-32">
       <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
+        {/* Imagem */}
         <div className="relative">
           <img
             src={sobreImg}
@@ -20,8 +21,9 @@ export default function Sobre() {
           </div>
         </div>
 
+        {/* Conteúdo */}
         <div>
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Sobre Nós</span>
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">A Associação</span>
           <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
             Uma tradição ornitológica no coração do Alentejo.
           </h2>
