@@ -3,7 +3,7 @@ import { FileText, Download } from "lucide-react";
 
 export default function Sobre() {
   return (
-    <section id="sobre" className="py-24 md:py-32">
+    <section id="associacao" className="py-24 md:py-32">
       <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
         <div className="relative">
           <img
