@@ -126,13 +126,13 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* MODAL / POPUP DE ECRÃ INTEIRO CORRIGIDO */}
+      {/* MODAL / POPUP DE ECRÃ INTEIRO */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4">
           <div className="relative max-w-2xl w-full bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-white/15 p-5 flex flex-col items-center">
             
             {/* Cabeçalho da Modal */}
-            <div className="w-full flex items-center justify-between mb-3 pb-2 border-b border-white/10">
+            <div className="w-full flex items-center justify-between mb-3 pb-2 border-b border-white/15">
               <h3 className="text-base font-bold text-white">Cartaz da Exposição Ornitológica</h3>
               <button
                 onClick={() => setIsModalOpen(false)}
@@ -143,7 +143,7 @@ export default function Hero() {
               </button>
             </div>
             
-            {/* Contentor com Altura Fixa Segura (Evita o ecrã em branco) */}
+            {/* Contentor com Altura Fixa Segura */}
             <div className="relative w-full h-[65vh] flex items-center justify-center bg-black/50 rounded-xl p-2 border border-white/10">
               <img
                 src={posterImg}
@@ -153,7 +153,7 @@ export default function Hero() {
             </div>
             
             {/* Rodapé da Modal */}
-            <div className="mt-4 flex justify-end w-full pt-2 border-t border-white/10">
+            <div className="mt-4 flex justify-end w-full pt-2 border-t border-white/15">
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="rounded-xl bg-primary px-6 py-2 text-xs font-semibold text-white hover:opacity-90 transition shadow-md cursor-pointer"
@@ -161,13 +161,6 @@ export default function Hero() {
                 Fechar
               </button>
             </div>
-
-          </div>
-        </div>
-      )}
-    </section>
-  );
-}
 
           </div>
         </div>
