@@ -1,6 +1,6 @@
 import heroImg from "@/assets/hero-birds.jpg";
 import posterImg from "@/assets/cartaz.jpeg"; // Substitui pelo caminho correto do teu cartaz
-import { ArrowRight, Leaf, Calendar, ExternalLink } from "lucide-react";
+import { ArrowRight, Leaf, Calendar, ExternalLink, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Hero() {
@@ -67,7 +67,6 @@ export default function Hero() {
                 </span>
               </div>
               
-              {/* Contentor com formato vertical (3/4) para o cartaz inteiro não ficar cortado */}
               <div 
                 className="relative overflow-hidden rounded-xl bg-black/40 aspect-[3/4] max-h-[400px] flex items-center justify-center group cursor-pointer border border-white/10"
                 onClick={() => setIsModalOpen(true)}
@@ -127,29 +126,29 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* MODAL / POPUP DE ECRÃ INTEIRO PARA O CARTAZ */}
+      {/* MODAL / POPUP DE ECRÃ INTEIRO CORRIGIDO */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4">
-          <div className="relative max-w-2xl w-full bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-white/15 p-5 flex flex-col items-center max-h-[92vh]">
+          <div className="relative max-w-2xl w-full bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-white/15 p-5 flex flex-col items-center">
             
             {/* Cabeçalho da Modal */}
             <div className="w-full flex items-center justify-between mb-3 pb-2 border-b border-white/10">
               <h3 className="text-base font-bold text-white">Cartaz da Exposição Ornitológica</h3>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition"
+                className="rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition cursor-pointer"
                 aria-label="Fechar"
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
             
-            {/* Imagem em Tamanho Real */}
-            <div className="relative w-full flex-1 overflow-auto flex items-center justify-center p-2">
+            {/* Contentor com Altura Fixa Segura (Evita o ecrã em branco) */}
+            <div className="relative w-full h-[65vh] flex items-center justify-center bg-black/50 rounded-xl p-2 border border-white/10">
               <img
                 src={posterImg}
                 alt="Cartaz da Exposição Ornitológica Completo"
-                className="max-h-[72vh] w-auto object-contain rounded-lg shadow-lg"
+                className="max-h-full max-w-full object-contain rounded-lg shadow-lg"
               />
             </div>
             
@@ -157,11 +156,18 @@ export default function Hero() {
             <div className="mt-4 flex justify-end w-full pt-2 border-t border-white/10">
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="rounded-xl bg-primary px-6 py-2 text-xs font-semibold text-white hover:opacity-90 transition shadow-md"
+                className="rounded-xl bg-primary px-6 py-2 text-xs font-semibold text-white hover:opacity-90 transition shadow-md cursor-pointer"
               >
                 Fechar
               </button>
             </div>
+
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
 
           </div>
         </div>
