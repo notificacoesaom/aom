@@ -1,5 +1,5 @@
 import heroImg from "@/assets/hero-birds.jpg";
-import posterImg from "@/assets/exhibition-poster.jpg"; // Substitui pelo caminho correto do teu cartaz
+import posterImg from "@/assets/cartaz.jpeg"; // Substitui pelo caminho correto do teu cartaz
 import { ArrowRight, Leaf, Calendar, ExternalLink } from "lucide-react";
 
 export default function Hero() {
