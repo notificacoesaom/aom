@@ -1,21 +1,12 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/aom.png";
-
-// Estrutura preparada para o futuro: Agrupámos por áreas de interesse
-const NAV = [
-  { label: "Início", href: "#inicio" },
-  { label: "A Associação", href: "#associacao" },
-  { label: "Atividades", href: "#atividades" },
-  { label: "Exposições", href: "#exposicoes" }, // Aqui tens as exposições de volta!
-  { label: "Criação", href: "#criacao" },
-  { label: "Biblioteca", href: "#biblioteca" },
-  { label: "Contactos", href: "#contactos" },
-];
+import { Navbar } from "./Navbar"; // Importa a navbar limpa que criámos
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileExposicoesOpen, setMobileExposicoesOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -39,18 +30,8 @@ export default function Header() {
           </span>
         </a>
 
-        {/* Navegação principal */}
-        <nav className="hidden lg:flex items-center gap-6">
-          {NAV.map((n) => (
-            <a
-              key={n.href}
-              href={n.href}
-              className="text-sm font-medium text-foreground/75 hover:text-primary transition-colors"
-            >
-              {n.label}
-            </a>
-          ))}
-        </nav>
+        {/* Navegação Desktop Modular */}
+        <Navbar />
 
         <div className="flex items-center gap-2">
           <a
@@ -69,20 +50,38 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Menu Mobile */}
+      {/* Menu Mobile (Mantém-se simples e expansível) */}
       {open && (
-        <div className="lg:hidden border-t border-border bg-background">
+        <div className="lg:hidden border-t border-border bg-background max-h-[85vh] overflow-y-auto">
           <nav className="container-page flex flex-col py-4">
-            {NAV.map((n) => (
-              <a
-                key={n.href}
-                href={n.href}
-                onClick={() => setOpen(false)}
-                className="py-3 text-base font-medium text-foreground/85 hover:text-primary border-b border-border/60 last:border-none"
+            <a href="#inicio" onClick={() => setOpen(false)} className="py-3 text-base font-medium text-foreground/85 border-b border-border/60">Início</a>
+            <a href="#associacao" onClick={() => setOpen(false)} className="py-3 text-base font-medium text-foreground/85 border-b border-border/60">A Associação</a>
+            <a href="#atividades" onClick={() => setOpen(false)} className="py-3 text-base font-medium text-foreground/85 border-b border-border/60">Atividades</a>
+
+            {/* Exposições Mobile com Dropdown */}
+            <div className="border-b border-border/60 py-3">
+              <button
+                onClick={() => setMobileExposicoesOpen(!mobileExposicoesOpen)}
+                className="flex items-center justify-between w-full text-base font-medium text-foreground/85"
               >
-                {n.label}
-              </a>
-            ))}
+                <span>Exposições</span>
+                <ChevronDown className={`h-4 w-4 transition-transform ${mobileExposicoesOpen ? "rotate-180" : ""}`} />
+              </button>
+              
+              {mobileExposicoesOpen && (
+                <div className="flex flex-col pl-4 mt-2 space-y-2 border-l-2 border-primary/30">
+                  <a href="#exposicao-2026" onClick={() => setOpen(false)} className="py-2 text-sm text-foreground/70">Exposição 2026 (Atual)</a>
+                  <a href="#exposicao-2025" onClick={() => setOpen(false)} className="py-2 text-sm text-foreground/70">Exposição 2025</a>
+                  <a href="#exposicao-2024" onClick={() => setOpen(false)} className="py-2 text-sm text-foreground/70">Exposição 2024</a>
+                  <a href="#exposicao-2023" onClick={() => setOpen(false)} className="py-2 text-sm text-foreground/70">Exposição 2023</a>
+                </div>
+              )}
+            </div>
+
+            <a href="#criacao" onClick={() => setOpen(false)} className="py-3 text-base font-medium text-foreground/85 border-b border-border/60">Criação</a>
+            <a href="#biblioteca" onClick={() => setOpen(false)} className="py-3 text-base font-medium text-foreground/85 border-b border-border/60">Biblioteca</a>
+            <a href="#contactos" onClick={() => setOpen(false)} className="py-3 text-base font-medium text-foreground/85 border-b border-border/60">Contactos</a>
+
             <a
               href="#inscricao"
               onClick={() => setOpen(false)}
