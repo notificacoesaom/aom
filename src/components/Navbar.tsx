@@ -11,10 +11,7 @@ const NAV_ITEMS = [
     href: "#exposicoes",
     dropdown: [
       { label: "Exposição 2026 (Atual)", href: "#exposicao-2026", badge: "Novo" },
-      { label: "Exposição 2025", href: "#exposicao-2025" },
-      { label: "Exposição 2024", href: "#exposicao-2024" },
-      { label: "Exposição 2023", href: "#exposicao-2023" },
-    ]
+       ]
   },
   // Podes adicionar mais dropdowns no futuro aqui de forma muito simples:
   // { label: "Outra Secção", href: "#", dropdown: [...] },
