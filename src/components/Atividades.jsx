@@ -189,7 +189,7 @@ export default function Atividades() {
                     {ativ.fotos && ativ.fotos.length > 0 ? (
                       ativ.fotos.map((foto, index) => (
                         <div key={index} className="h-20 rounded-lg overflow-hidden border border-border">
-                          <img src={foto} alt={`Foto ${index + 1}`} className="w-full h-full object-cover" />
+                          <img src={foto} alt={`Foto ${index + 1}`} className="w-full h-full object-contain" />
                         </div>
                       ))
                     ) : (
