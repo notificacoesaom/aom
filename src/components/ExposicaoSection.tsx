@@ -5,6 +5,16 @@ export default function ExposicaoSection() {
   // Procura automaticamente a exposição que está marcada como "atual"
   const info = EXPOSICOES_HISTORICO.find((e) => e.status === "atual") || EXPOSICOES_HISTORICO[0];
 
+  // Carrega automaticamente todas as imagens da pasta correspondente ao ano atual
+  // Nota: Garante que crias a pasta correspondente (ex: src/assets/galeria-2026/)
+  const imagensModules = import.meta.glob<{ default: string }>(
+    '@/assets/galeria-2026/*.{jpg,jpeg,png,webp}', 
+    { eager: true }
+  );
+
+  // Transforma os módulos do Vite numa lista simples de URLs
+  const listaFotos = Object.values(imagensModules).map((mod) => mod.default);
+
   return (
     <section id={`exposicao-${info.ano}`} className="py-24 bg-background text-foreground relative overflow-hidden border-t border-border/40">
       <div className="container-page max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,16 +90,38 @@ export default function ExposicaoSection() {
 
         </div>
 
-        {/* Galeria */}
+        {/* Galeria Dinâmica */}
         <div className="rounded-2xl border border-border/60 bg-muted/20 p-8 sm:p-12">
-          <h3 className="font-display text-2xl font-bold mb-6">Galeria Fotográfica - {info.ano}</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((num) => (
-              <div key={num} className="aspect-video rounded-xl bg-muted border border-border/80 flex items-center justify-center text-center p-4">
-                <span className="text-xs text-muted-foreground">Fotografia #{num} ({info.ano})</span>
-              </div>
-            ))}
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+            <div>
+              <h3 className="font-display text-2xl font-bold">Galeria Fotográfica - {info.ano}</h3>
+              <p className="text-sm text-muted-foreground mt-1">
+                {listaFotos.length > 0 
+                  ? `A mostrar ${listaFotos.length} fotografias do evento.` 
+                  : "Registo fotográfico brevemente disponível."}
+              </p>
+            </div>
           </div>
+
+          {listaFotos.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {listaFotos.map((fotoUrl, index) => (
+                <div key={index} className="group relative aspect-video rounded-xl overflow-hidden bg-muted border border-border/80 shadow-sm transition hover:shadow-md">
+                  <img 
+                    src={fotoUrl} 
+                    alt={`Foto ${index + 1} Exposição ${info.ano}`} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12 border border-dashed border-border rounded-xl bg-background/50">
+              <ImageIcon className="h-10 w-10 mx-auto text-muted-foreground/40 mb-3" />
+              <p className="text-sm font-medium text-muted-foreground">Ainda não existem fotografias publicadas.</p>
+              <p className="text-xs text-muted-foreground/70 mt-1">Basta colocar as imagens na pasta <code className="bg-muted px-1.5 py-0.5 rounded text-primary">src/assets/galeria-{info.ano}/</code> para aparecerem aqui.</p>
+            </div>
+          )}
         </div>
 
       </div>
