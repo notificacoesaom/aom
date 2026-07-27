@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Calendar, MapPin, Image as ImageIcon, Tag, FileText, Download } from "lucide-react";
 
+// Importação correta das imagens a partir de src/assets
+import cartazFeiraLuz from "../assets/cartaz-feira-da-luz-2026.jpeg";
+import cartazMostraJulho from "../assets/Mostra-julho-2026.jpeg";
+
 const ATIVIDADES_LIST = [
   {
     id: "feira-luz-2026",
@@ -10,9 +14,9 @@ const ATIVIDADES_LIST = [
     local: "Parque Municipal de Exposições, Montemor-o-Novo",
     descricao: "Visite o nosso espaço na Feira da Luz e descubra uma grande variedade de aves de diferentes espécies e mutações, criadas pelos nossos associados.",
     estado: "Próxima",
-    cartaz: "/assets/cartaz-feira-da-luz-2026.jpeg", // Exemplo: "/assets/cartaz-feira-luz.jpg"
-    regulamento: "docs/Regulamento-Feira-da-Luz-2026.pdf", // Caminho para o PDF do regulamento
-    fichaInscricao: "docs/Ficha-inscricao-feira-da-luz-2026.pdf", // Caminho para a ficha de inscrição
+    cartaz: cartazFeiraLuz,
+    regulamento: "docs/Regulamento-Feira-da-Luz-2026.pdf",
+    fichaInscricao: "docs/Ficha-inscricao-feira-da-luz-2026.pdf",
   },
   {
     id: "mostra-julho-2026",
@@ -22,7 +26,7 @@ const ATIVIDADES_LIST = [
     local: "Sede da AOM (Rua de Santo António, n.º 26, Montemor-o-Novo)",
     descricao: "Encontro mensal de sócios para partilha, mostra de criação, cedência responsável e almoço de convívio associativo.",
     estado: "Realizada",
-    cartaz: "/assets/Mostra-julho-2026.jpeg",
+    cartaz: cartazMostraJulho,
     regulamento: "",
     fichaInscricao: "",
   },
