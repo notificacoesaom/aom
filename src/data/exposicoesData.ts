@@ -32,19 +32,5 @@ export const EXPOSICOES_HISTORICO: Exposicao[] = [
     vencedores: [], // Fica vazio até o evento decorrer
     fotos: []
   },
-  {
-    ano: 2025,
-    titulo: "Exposição Ornitológica Anterior",
-    status: "concluida",
-    subtitulo: "Edição Anual",
-    datas: "Novembro de 2025",
-    horario: "",
-    local: "Pavilhão Municipal de Montemor-o-Novo",
-    cartazImg: "@/assets/exhibition-poster-2025.jpg",
-    descricao: "Edição anterior de sucesso com grande adesão de criadores.",
-    vencedores: [
-      { classe: "Canários de Cor", ave: "Gloster", nomeCriador: "Exemplo" }
-    ],
-    fotos: []
-  }
+ 
 ];
