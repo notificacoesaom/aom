@@ -10,9 +10,9 @@ const ATIVIDADES_LIST = [
     local: "Parque Municipal de Exposições, Montemor-o-Novo",
     descricao: "Visite o nosso espaço na Feira da Luz e descubra uma grande variedade de aves de diferentes espécies e mutações, criadas pelos nossos associados.",
     estado: "Próxima",
-    cartaz: "", // Exemplo: "/assets/cartaz-feira-luz.jpg"
-    regulamento: "docs/regulamento-feira-luz-2026.pdf", // Caminho para o PDF do regulamento
-    fichaInscricao: "docs/ficha-inscricao-feira-luz-2026.xlsx", // Caminho para a ficha de inscrição
+    cartaz: "/assets/cartaz-feira-da-luz-2026.jpeg", // Exemplo: "/assets/cartaz-feira-luz.jpg"
+    regulamento: "docs/Regulamento-Feira-da-Luz-2026.pdf", // Caminho para o PDF do regulamento
+    fichaInscricao: "docs/Ficha-inscricao-feira-da-luz-2026.pdf", // Caminho para a ficha de inscrição
   },
   {
     id: "mostra-julho-2026",
@@ -22,7 +22,7 @@ const ATIVIDADES_LIST = [
     local: "Sede da AOM (Rua de Santo António, n.º 26, Montemor-o-Novo)",
     descricao: "Encontro mensal de sócios para partilha, mostra de criação, cedência responsável e almoço de convívio associativo.",
     estado: "Realizada",
-    cartaz: "",
+    cartaz: "/assets/Mostra-julho-2026.jpeg",
     regulamento: "",
     fichaInscricao: "",
   },
