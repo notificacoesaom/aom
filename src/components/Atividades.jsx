@@ -55,6 +55,7 @@ const ATIVIDADES_LIST = [
 
 export default function Atividades() {
   const [filtro, setFiltro] = useState("todas");
+  const [selectedImage, setSelectedImage] = useState(null); // Estado para controlar a imagem expandida
 
   const atividadesFiltradas = ATIVIDADES_LIST.filter((ativ) => {
     if (filtro === "todas") return true;
@@ -62,7 +63,7 @@ export default function Atividades() {
   });
 
   return (
-    <section id="atividades" className="py-24 md:py-32 bg-secondary/20">
+    <section id="atividades" className="py-24 md:py-32 bg-secondary/20 relative">
       <div className="container-page">
         <div className="max-w-3xl mx-auto text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Dinâmica Associativa</span>
@@ -105,10 +106,10 @@ export default function Atividades() {
           {atividadesFiltradas.map((ativ) => (
             <div key={ativ.id} className="flex flex-col rounded-2xl border border-border bg-card overflow-hidden shadow-[var(--shadow-card)]">
               
-              {/* Espaço do Cartaz ajustado com object-contain para não cortar */}
+              {/* Espaço do Cartaz */}
               <div className="relative aspect-[4/3] w-full bg-secondary/60 border-b border-border overflow-hidden flex items-center justify-center p-2">
                 {ativ.cartaz ? (
-                  <img src={ativ.cartaz} alt={ativ.titulo} className="w-full h-full object-contain" />
+                  <img src={ativ.cartaz} alt={ativ.titulo} className="w-full h-full object-contain cursor-pointer hover:scale-105 transition duration-300" onClick={() => setSelectedImage(ativ.cartaz)} />
                 ) : (
                   <div className="flex flex-col items-center justify-center p-6 text-center text-muted-foreground">
                     <ImageIcon className="h-10 w-10 text-primary/40 mb-2" />
@@ -174,21 +175,25 @@ export default function Atividades() {
                   )}
                 </div>
 
-                {/* Galeria de Fotos Dinâmica */}
+                {/* Galeria de Fotos Interativa */}
                 <div className="mt-8 pt-6 border-t border-border">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
                       <ImageIcon className="h-4 w-4 text-primary" /> Galeria de Fotos
                     </span>
                     <span className="text-xs text-muted-foreground italic">
-                      {ativ.fotos && ativ.fotos.length > 0 ? `${ativ.fotos.length} fotos` : "Em breve"}
+                      {ativ.fotos && ativ.fotos.length > 0 ? `${ativ.fotos.length} fotos (clica para ampliar)` : "Em breve"}
                     </span>
                   </div>
 
                   <div className="grid grid-cols-3 gap-2">
                     {ativ.fotos && ativ.fotos.length > 0 ? (
                       ativ.fotos.map((foto, index) => (
-                        <div key={index} className="h-20 rounded-lg overflow-hidden border border-border">
+                        <div 
+                          key={index} 
+                          onClick={() => setSelectedImage(foto)}
+                          className="h-20 rounded-lg overflow-hidden border border-border cursor-pointer hover:opacity-85 transition transform hover:scale-[1.03]"
+                        >
                           <img src={foto} alt={`Foto ${index + 1}`} className="w-full h-full object-contain" />
                         </div>
                       ))
@@ -207,6 +212,29 @@ export default function Atividades() {
           ))}
         </div>
       </div>
+
+      {/* Janela Modal (Lightbox) para expandir qualquer imagem (cartaz ou foto da galeria) */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-12 right-0 sm:right-4 rounded-full bg-white/10 hover:bg-white/20 p-2 text-white transition flex items-center justify-center shadow-lg"
+              aria-label="Fechar"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <img 
+              src={selectedImage} 
+              alt="Imagem ampliada" 
+              className="max-h-[85vh] max-w-full rounded-2xl object-contain shadow-2xl border border-white/10"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
