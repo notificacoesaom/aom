@@ -68,7 +68,7 @@ export default function ExposicaoSection() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-border/60 bg-card p-6 shadow-sm flex flex-col justify-between">
+         <div className="rounded-2xl border border-border/60 bg-card p-6 shadow-sm flex flex-col justify-between">
             <div>
               <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
                 <FileText className="h-6 w-6" />
@@ -78,9 +78,9 @@ export default function ExposicaoSection() {
                 Consulte as condições de admissão e escalões de {info.ano}.
               </p>
             </div>
-            {/* BOTÃO REGULAMENTO ATUALIZADO */}
+            {/* CAMINHO CORRIGIDO COM BASE_URL DO VITE */}
             <a 
-              href="/docs/regulamento-exposicao-2026.pdf" 
+              href={`${import.meta.env.BASE_URL}docs/regulamento-exposicao-2026.pdf`} 
               download="regulamento-exposicao-2026.pdf"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground shadow transition hover:bg-primary/90 mt-4"
             >
