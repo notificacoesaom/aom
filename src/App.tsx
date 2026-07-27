@@ -3,7 +3,8 @@ import Hero from "./components/Hero";
 import Associacao from "./components/Associacao"; // Renomeámos de Sobre para Associacao
 import Vantagens from "./components/Vantagens";
 import Anilhas from "./components/Anilhas";
-import Exposicoes from "./components/Exposicoes";
+import Exposicoes from "./components/Exposicoes"; // Secção de destaque / countdown rápida
+import ExposicaoSection from "./components/ExposicaoSection"; // Nova secção detalhada baseada em dados
 import Footer from "./components/Footer";
 
 // Quando quiseres criar estas secções, basta descomentar:
@@ -16,10 +17,15 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <Associacao /> {/* Componente renomeado */}
+        <Associacao />
         <Vantagens />
         <Anilhas />
+        
+        {/* Destaque rápido / Contagem decrescente (#exposicoes) */}
         <Exposicoes />
+        
+        {/* Informação completa da exposição atual (Lê automaticamente o status "atual" de exposicoesData.ts) */}
+        <ExposicaoSection />
         
         {/* Quando criares os ficheiros, basta adicionar aqui: */}
         {/* <Criacao /> */}
