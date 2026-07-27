@@ -78,7 +78,12 @@ export default function ExposicaoSection() {
                 Consulte as condições de admissão e escalões de {info.ano}.
               </p>
             </div>
-            <a href="#regulamento" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground shadow transition hover:bg-primary/90 mt-4">
+            {/* BOTÃO REGULAMENTO ATUALIZADO */}
+            <a 
+              href="/docs/regulamento-exposicao-2026.pdf" 
+              download="regulamento-exposicao-2026.pdf"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground shadow transition hover:bg-primary/90 mt-4"
+            >
               <Download className="h-4 w-4" /> Descarregar Regulamento (PDF)
             </a>
           </div>
@@ -93,7 +98,13 @@ export default function ExposicaoSection() {
                 Portal de submissão de exemplares para a edição de {info.ano}.
               </p>
             </div>
-            <a href="#inscricoes" className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-background px-4 py-2.5 text-sm font-medium shadow-sm transition hover:bg-muted mt-4">
+            {/* BOTÃO INSCRIÇÕES ATUALIZADO */}
+            <a 
+              href="https://www.fop.pt/expo.asp?id=664" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-background px-4 py-2.5 text-sm font-medium shadow-sm transition hover:bg-muted mt-4"
+            >
               Efetuar Inscrição Online
             </a>
           </div>
@@ -123,7 +134,6 @@ export default function ExposicaoSection() {
                   <img 
                     src={fotoUrl} 
                     alt={`Foto ${index + 1} Exposição ${info.ano}`} 
-                    // object-contain garante que a foto fica inteira, sem cortar partes
                     className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 p-2"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
@@ -151,7 +161,7 @@ export default function ExposicaoSection() {
         >
           <div 
             className="relative max-w-5xl max-h-[90vh] w-full h-full flex items-center justify-center"
-            onClick={(e) => e.stopPropagation()} // Evita que feche ao clicar na própria imagem
+            onClick={(e) => e.stopPropagation()} 
           >
             <button 
               onClick={() => setImagemSelecionada(null)}
