@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Calendar, MapPin, Clock, Image as ImageIcon, ChevronRight, Tag } from "lucide-react";
+import { Calendar, MapPin, Image as ImageIcon, Tag } from "lucide-react";
 
 const ATIVIDADES_LIST = [
   {
@@ -10,8 +10,6 @@ const ATIVIDADES_LIST = [
     local: "Parque Municipal de Exposições, Montemor-o-Novo",
     descricao: "Visite o nosso espaço na Feira da Luz e descubra uma grande variedade de aves de diferentes espécies e mutações, criadas pelos nossos associados.",
     estado: "Próxima",
-    imagem: "/assets/feira-luz.jpg", // Podes ajustar o caminho da imagem
-    fotosGaleria: [],
   },
   {
     id: "mostra-julho-2026",
@@ -21,15 +19,13 @@ const ATIVIDADES_LIST = [
     local: "Sede da AOM (Rua de Santo António, n.º 26, Montemor-o-Novo)",
     descricao: "Encontro mensal de sócios para partilha, mostra de criação, cedência responsável e almoço de convívio associativo.",
     estado: "Realizada",
-    imagem: "/assets/mostra-julho.jpg",
-    fotosGaleria: [],
   },
 ];
 
 export default function Atividades() {
-  const [filtro, setFiltro] = useState("todas"); // 'todas', 'Feira Anual', 'Mensal'
+  const [filtro, setFiltro] = useState("todas");
 
-  const atividadesFiltradas = atividades_list.filter((ativ) => {
+  const atividadesFiltradas = ATIVIDADES_LIST.filter((ativ) => {
     if (filtro === "todas") return true;
     return ativ.tipo === filtro;
   });
@@ -46,7 +42,6 @@ export default function Atividades() {
             Acompanhe a nossa agenda anual, participe nas mostras e cedências mensais de aves e reveja os melhores momentos dos nossos eventos.
           </p>
 
-          {/* Filtros de Categoria (semelhante a Exposições) */}
           <div className="mt-8 flex flex-wrap justify-center gap-2">
             <button
               onClick={() => setFiltro("todas")}
@@ -75,7 +70,6 @@ export default function Atividades() {
           </div>
         </div>
 
-        {/* Grelha de Atividades */}
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-2">
           {atividadesFiltradas.map((ativ) => (
             <div key={ativ.id} className="flex flex-col rounded-2xl border border-border bg-card overflow-hidden shadow-[var(--shadow-card)]">
@@ -105,7 +99,6 @@ export default function Atividades() {
                   </div>
                 </div>
 
-                {/* Secção de Fotografias do Evento */}
                 <div className="mt-8 pt-6 border-t border-border">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
@@ -113,7 +106,6 @@ export default function Atividades() {
                     </span>
                     <span className="text-xs text-muted-foreground italic">Em breve / Adicionar fotos</span>
                   </div>
-                  {/* Espaço reservado para grelha de fotos */}
                   <div className="mt-3 grid grid-cols-3 gap-2">
                     <div className="h-20 rounded-lg bg-secondary/50 border border-dashed border-border flex items-center justify-center text-xs text-muted-foreground">Foto 1</div>
                     <div className="h-20 rounded-lg bg-secondary/50 border border-dashed border-border flex items-center justify-center text-xs text-muted-foreground">Foto 2</div>
