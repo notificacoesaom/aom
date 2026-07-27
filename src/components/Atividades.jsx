@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Calendar, MapPin, Image as ImageIcon, Tag, FileText, Download } from "lucide-react";
+import { Calendar, MapPin, Image as ImageIcon, Tag, FileText, Download, X } from "lucide-react";
 
 // 1. Importa os cartazes a partir de src/assets
 import cartazFeiraLuz from "../assets/cartaz-feira-da-luz-2026.jpeg";
@@ -9,10 +9,6 @@ import foto2 from "../assets/Mostra-julho(2).jpeg";
 import foto3 from "../assets/Mostra-julho(3).jpeg";
 import foto4 from "../assets/Mostra-julho(4).jpeg";
 import foto5 from "../assets/Mostra-julho(5).jpeg";
-
-// Exemplo de importação de fotos para a galeria (quando as tiveres, substitui pelos teus ficheiros):
-// import foto1 from "../assets/evento-foto1.jpeg";
-// import foto2 from "../assets/evento-foto2.jpeg";
 
 const ATIVIDADES_LIST = [
   {
@@ -26,11 +22,7 @@ const ATIVIDADES_LIST = [
     cartaz: cartazFeiraLuz,
     regulamento: "docs/Regulamento-Feira-da-Luz-2026.pdf",
     fichaInscricao: "docs/Ficha-inscricao-feira-da-luz-2026.pdf",
-    // 2. Coloca aqui as fotografias reais do evento para preencher a galeria
-    fotos: [
-      // foto1,
-      // foto2,
-    ],
+    fotos: [],
   },
   {
     id: "mostra-julho-2026",
@@ -43,19 +35,13 @@ const ATIVIDADES_LIST = [
     cartaz: cartazMostraJulho,
     regulamento: "",
     fichaInscricao: "",
-    fotos: [foto1,
-            foto2,
-            foto3,
-            foto4,
-            foto5
-      // Podes adicionar fotos aqui também
-    ],
+    fotos: [foto1, foto2, foto3, foto4, foto5],
   },
 ];
 
 export default function Atividades() {
   const [filtro, setFiltro] = useState("todas");
-  const [selectedImage, setSelectedImage] = useState(null); // Estado para controlar a imagem expandida
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const atividadesFiltradas = ATIVIDADES_LIST.filter((ativ) => {
     if (filtro === "todas") return true;
@@ -213,7 +199,7 @@ export default function Atividades() {
         </div>
       </div>
 
-      {/* Janela Modal (Lightbox) para expandir qualquer imagem (cartaz ou foto da galeria) */}
+      {/* Janela Modal (Lightbox) para expandir qualquer imagem */}
       {selectedImage && (
         <div 
           className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
