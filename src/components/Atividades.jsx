@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { Calendar, MapPin, Image as ImageIcon, Tag, FileText, Download } from "lucide-react";
 
-// Importação correta das imagens a partir de src/assets
+// 1. Importa os cartazes a partir de src/assets
 import cartazFeiraLuz from "../assets/cartaz-feira-da-luz-2026.jpeg";
 import cartazMostraJulho from "../assets/Mostra-julho-2026.jpeg";
+
+// Exemplo de importação de fotos para a galeria (quando as tiveres, substitui pelos teus ficheiros):
+// import foto1 from "../assets/evento-foto1.jpeg";
+// import foto2 from "../assets/evento-foto2.jpeg";
 
 const ATIVIDADES_LIST = [
   {
@@ -17,6 +21,11 @@ const ATIVIDADES_LIST = [
     cartaz: cartazFeiraLuz,
     regulamento: "docs/Regulamento-Feira-da-Luz-2026.pdf",
     fichaInscricao: "docs/Ficha-inscricao-feira-da-luz-2026.pdf",
+    // 2. Coloca aqui as fotografias reais do evento para preencher a galeria
+    fotos: [
+      // foto1,
+      // foto2,
+    ],
   },
   {
     id: "mostra-julho-2026",
@@ -29,6 +38,9 @@ const ATIVIDADES_LIST = [
     cartaz: cartazMostraJulho,
     regulamento: "",
     fichaInscricao: "",
+    fotos: [
+      // Podes adicionar fotos aqui também
+    ],
   },
 ];
 
@@ -84,15 +96,14 @@ export default function Atividades() {
           {atividadesFiltradas.map((ativ) => (
             <div key={ativ.id} className="flex flex-col rounded-2xl border border-border bg-card overflow-hidden shadow-[var(--shadow-card)]">
               
-              {/* Espaço do Cartaz por cima do texto */}
-              <div className="relative aspect-[4/3] w-full bg-secondary/40 border-b border-border overflow-hidden flex items-center justify-center">
+              {/* Espaço do Cartaz ajustado com object-contain para não cortar */}
+              <div className="relative aspect-[4/3] w-full bg-secondary/60 border-b border-border overflow-hidden flex items-center justify-center p-2">
                 {ativ.cartaz ? (
-                  <img src={ativ.cartaz} alt={ativ.titulo} className="w-full h-full object-cover" />
+                  <img src={ativ.cartaz} alt={ativ.titulo} className="w-full h-full object-contain" />
                 ) : (
                   <div className="flex flex-col items-center justify-center p-6 text-center text-muted-foreground">
                     <ImageIcon className="h-10 w-10 text-primary/40 mb-2" />
                     <span className="text-xs font-semibold">Espaço para Cartaz Oficial</span>
-                    <span className="text-[10px] text-muted-foreground/75 mt-1">Insira a imagem do cartaz do evento</span>
                   </div>
                 )}
               </div>
@@ -122,7 +133,7 @@ export default function Atividades() {
                     </div>
                   </div>
 
-                  {/* Documentos Oficiais (Regulamento e Ficha de Inscrição) */}
+                  {/* Documentos Oficiais */}
                   {(ativ.regulamento || ativ.fichaInscricao) && (
                     <div className="mt-6 pt-5 border-t border-border/60">
                       <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground block mb-3">
@@ -154,19 +165,34 @@ export default function Atividades() {
                   )}
                 </div>
 
+                {/* Galeria de Fotos Dinâmica */}
                 <div className="mt-8 pt-6 border-t border-border">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-3">
                     <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
                       <ImageIcon className="h-4 w-4 text-primary" /> Galeria de Fotos
                     </span>
-                    <span className="text-xs text-muted-foreground italic">Em breve / Adicionar fotos</span>
+                    <span className="text-xs text-muted-foreground italic">
+                      {ativ.fotos && ativ.fotos.length > 0 ? `${ativ.fotos.length} fotos` : "Em breve"}
+                    </span>
                   </div>
-                  <div className="mt-3 grid grid-cols-3 gap-2">
-                    <div className="h-20 rounded-lg bg-secondary/50 border border-dashed border-border flex items-center justify-center text-xs text-muted-foreground">Foto 1</div>
-                    <div className="h-20 rounded-lg bg-secondary/50 border border-dashed border-border flex items-center justify-center text-xs text-muted-foreground">Foto 2</div>
-                    <div className="h-20 rounded-lg bg-secondary/50 border border-dashed border-border flex items-center justify-center text-xs text-muted-foreground">Foto 3</div>
+
+                  <div className="grid grid-cols-3 gap-2">
+                    {ativ.fotos && ativ.fotos.length > 0 ? (
+                      ativ.fotos.map((foto, index) => (
+                        <div key={index} className="h-20 rounded-lg overflow-hidden border border-border">
+                          <img src={foto} alt={`Foto ${index + 1}`} className="w-full h-full object-cover" />
+                        </div>
+                      ))
+                    ) : (
+                      <>
+                        <div className="h-20 rounded-lg bg-secondary/50 border border-dashed border-border flex items-center justify-center text-[10px] text-muted-foreground">Foto 1</div>
+                        <div className="h-20 rounded-lg bg-secondary/50 border border-dashed border-border flex items-center justify-center text-[10px] text-muted-foreground">Foto 2</div>
+                        <div className="h-20 rounded-lg bg-secondary/50 border border-dashed border-border flex items-center justify-center text-[10px] text-muted-foreground">Foto 3</div>
+                      </>
+                    )}
                   </div>
                 </div>
+
               </div>
             </div>
           ))}
