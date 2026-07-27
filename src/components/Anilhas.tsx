@@ -1,4 +1,4 @@
-import { CircleDot, CalendarCheck, Wallet, FileText, Download } from "lucide-react";
+import { CalendarCheck, Wallet, FileText, Download } from "lucide-react";
 
 const DEADLINES = [
   { num: "1.º", date: "01/07/2026" },
@@ -21,25 +21,6 @@ export default function Anilhas() {
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
             Enquanto associação filiada, encaminhamos os pedidos de anilhas oficiais da federação, garantindo numeração única e conformidade para exposições nacionais e internacionais. Consulte abaixo os prazos, preçário e descarregue os documentos necessários.
           </p>
-
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="docs/pedido-anilhas.xlsx"
-              download
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] hover:bg-primary-glow transition"
-            >
-              <Download className="h-4 w-4" />
-              Pedido de Anilhas (Ficheiro)
-            </a>
-            <a
-              href="docs/medidas-oficiais-anilhas.pdf"
-              download
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-secondary transition"
-            >
-              <FileText className="h-4 w-4 text-primary" />
-              Medidas Oficiais
-            </a>
-          </div>
         </div>
 
         <div className="space-y-6">
