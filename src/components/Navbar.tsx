@@ -1,23 +1,26 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-// Estrutura organizada para gerir links simples e menus com dropdowns futuros
+// Estrutura organizada para gerir links simples e menus com dropdowns
 const NAV_ITEMS = [
   { label: "Início", href: "#inicio" },
   { label: "A Associação", href: "#associacao" },
-  { label: "Atividades", href: "#atividades" },
+  { 
+    label: "Atividades", 
+    href: "#atividades",
+    dropdown: [
+      { label: "Feira da Luz 2026 (Próxima)", href: "#atividades", badge: "Destaque" },
+      { label: "Mostras e Cedências Mensais", href: "#atividades" },
+    ]
+  },
   { label: "Anilhas & Quotas", href: "#anilhas" },
   { 
     label: "Exposições", 
     href: "#exposicoes",
     dropdown: [
       { label: "Exposição 2026 (Atual)", href: "#exposicao-2026", badge: "Novo" },
-       ]
+    ]
   },
-  // Podes adicionar mais dropdowns no futuro aqui de forma muito simples:
-  // { label: "Outra Secção", href: "#", dropdown: [...] },
-  // { label: "Criação", href: "#criacao" },
-  // { label: "Biblioteca", href: "#biblioteca" },
   { label: "Contactos", href: "#contactos" },
 ];
 
@@ -49,13 +52,13 @@ export function Navbar() {
 
             {/* Caixa do Dropdown */}
             {hasDropdown && isOpen && item.dropdown && (
-              <div className="absolute top-full left-0 w-52 rounded-xl bg-background/95 backdrop-blur-xl border border-border shadow-xl py-2 flex flex-col z-50 animate-in fade-in slide-in-from-top-2">
+              <div className="absolute top-full left-0 w-64 rounded-xl bg-background/95 backdrop-blur-xl border border-border shadow-xl py-2 flex flex-col z-50 animate-in fade-in slide-in-from-top-2">
                 <div className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground border-b border-border/60 mb-1">
-                  Histórico
+                  {item.label === "Atividades" ? "Agenda & Eventos" : "Histórico"}
                 </div>
                 {item.dropdown.map((sub) => (
                   <a
-                    key={sub.href}
+                    key={sub.label}
                     href={sub.href}
                     onClick={() => setActiveDropdown(null)}
                     className="px-4 py-2 text-xs text-foreground/80 hover:text-primary hover:bg-muted/50 transition flex items-center justify-between"
