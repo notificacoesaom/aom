@@ -24,7 +24,7 @@ export default function Anilhas() {
 
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="/docs/pedido-anilhas.xlsx"
+              href="docs/pedido-anilhas.xlsx"
               download
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] hover:bg-primary-glow transition"
             >
@@ -32,7 +32,7 @@ export default function Anilhas() {
               Pedido de Anilhas (Ficheiro)
             </a>
             <a
-              href="/docs/medidas-oficiais-anilhas.pdf"
+              href="docs/medidas-oficiais-anilhas.pdf"
               download
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-secondary transition"
             >
@@ -117,7 +117,7 @@ export default function Anilhas() {
             </p>
             <div className="mt-4 flex flex-col sm:flex-row gap-3">
               <a
-                href="/docs/pedido-anilhas.xlsx"
+                href="docs/pedido-anilhas.xlsx"
                 download
                 className="flex items-center justify-between rounded-xl border border-border bg-secondary/30 p-3 hover:bg-secondary transition flex-1 text-sm font-semibold text-foreground"
               >
@@ -128,7 +128,7 @@ export default function Anilhas() {
                 <span className="text-xs text-muted-foreground font-mono">XLSX</span>
               </a>
               <a
-                href="/docs/medidas-oficiais-anilhas.pdf"
+                href="docs/medidas-oficiais-anilhas.pdf"
                 download
                 className="flex items-center justify-between rounded-xl border border-border bg-secondary/30 p-3 hover:bg-secondary transition flex-1 text-sm font-semibold text-foreground"
               >
