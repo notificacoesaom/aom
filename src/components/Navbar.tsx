@@ -6,6 +6,7 @@ const NAV_ITEMS = [
   { label: "Início", href: "#inicio" },
   { label: "A Associação", href: "#associacao" },
   { label: "Atividades", href: "#atividades" },
+  { label: "Anilhas & Quotas", href: "#anilhas" },
   { 
     label: "Exposições", 
     href: "#exposicoes",
