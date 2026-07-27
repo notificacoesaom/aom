@@ -6,7 +6,7 @@ export default function ExposicaoSection() {
   const info = EXPOSICOES_HISTORICO.find((e) => e.status === "atual") || EXPOSICOES_HISTORICO[0];
 
   return (
-    <section id={`exposicao-${info.ano}`} className="py-24 bg-background text-foreground relative overflow-hidden border-t border-border/40">
+    <section id={`exposicao-2026${info.ano}`} className="py-24 bg-background text-foreground relative overflow-hidden border-t border-border/40">
       <div className="container-page max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Cabeçalho dinâmico */}
