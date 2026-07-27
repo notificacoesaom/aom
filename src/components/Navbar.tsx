@@ -15,8 +15,8 @@ const NAV_ITEMS = [
   },
   // Podes adicionar mais dropdowns no futuro aqui de forma muito simples:
   // { label: "Outra Secção", href: "#", dropdown: [...] },
-  { label: "Criação", href: "#criacao" },
-  { label: "Biblioteca", href: "#biblioteca" },
+  // { label: "Criação", href: "#criacao" },
+  // { label: "Biblioteca", href: "#biblioteca" },
   { label: "Contactos", href: "#contactos" },
 ];
 
