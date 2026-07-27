@@ -4,6 +4,11 @@ import { Calendar, MapPin, Image as ImageIcon, Tag, FileText, Download } from "l
 // 1. Importa os cartazes a partir de src/assets
 import cartazFeiraLuz from "../assets/cartaz-feira-da-luz-2026.jpeg";
 import cartazMostraJulho from "../assets/Mostra-julho-2026.jpeg";
+import foto1 from "../assets/Mostra-julho(1).jpeg";
+import foto2 from "../assets/Mostra-julho(2).jpeg";
+import foto3 from "../assets/Mostra-julho(3).jpeg";
+import foto4 from "../assets/Mostra-julho(4).jpeg";
+import foto5 from "../assets/Mostra-julho(5).jpeg";
 
 // Exemplo de importação de fotos para a galeria (quando as tiveres, substitui pelos teus ficheiros):
 // import foto1 from "../assets/evento-foto1.jpeg";
@@ -38,7 +43,11 @@ const ATIVIDADES_LIST = [
     cartaz: cartazMostraJulho,
     regulamento: "",
     fichaInscricao: "",
-    fotos: [
+    fotos: [foto1,
+            foto2,
+            foto3,
+            foto4,
+            foto5
       // Podes adicionar fotos aqui também
     ],
   },
