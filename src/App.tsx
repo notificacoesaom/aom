@@ -1,15 +1,11 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Associacao from "./components/Associacao"; // Renomeámos de Sobre para Associacao
-//import Vantagens from "./components/Vantagens";
+import Associacao from "./components/Associacao";
+import Atividades from "./components/Atividades"; // <--- Importação correta de Atividades
 import Anilhas from "./components/Anilhas";
-import Exposicoes from "./components/Exposicoes"; // Secção de destaque / countdown rápida
-import ExposicaoSection from "./components/ExposicaoSection"; // Nova secção detalhada baseada em dados
+import Exposicoes from "./components/Exposicoes";
+import ExposicaoSection from "./components/ExposicaoSection";
 import Footer from "./components/Footer";
-
-// Quando quiseres criar estas secções, basta descomentar:
-// import Criacao from "./components/Criacao";
-// import Biblioteca from "./components/Biblioteca";
 
 export default function App() {
   return (
@@ -18,18 +14,14 @@ export default function App() {
       <main>
         <Hero />
         <Associacao />
-        <Vantagens />
+        <Atividades /> {/* <--- Componente Atividades ativo na página */}
         <Anilhas />
         
         {/* Destaque rápido / Contagem decrescente (#exposicoes) */}
         <Exposicoes />
         
-        {/* Informação completa da exposição atual (Lê automaticamente o status "atual" de exposicoesData.ts) */}
+        {/* Informação completa da exposição atual */}
         <ExposicaoSection />
-        
-        {/* Quando criares os ficheiros, basta adicionar aqui: */}
-        {/* <Criacao /> */}
-        {/* <Biblioteca /> */}
       </main>
       <Footer />
     </div>
